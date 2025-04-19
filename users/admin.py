@@ -12,7 +12,7 @@ class UserProfileAdmin(admin.ModelAdmin):
         return obj.user.username
 
     def short_bio(self, obj):
-        return obj.bio[:30] + "..."
+        return obj.bio[:30] + "..." if obj.bio else "-"
 
 
 class CustomUserAdmin(UserAdmin):
