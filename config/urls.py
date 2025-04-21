@@ -9,6 +9,8 @@ from rest_framework import permissions
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/auth/", include("authentication.urls")),
+    path("api/rooms/", include("rooms.urls")),
+
 ]
 
 if settings.DEBUG:

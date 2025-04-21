@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     # local
     "users.apps.UsersConfig",
     "authentication.apps.AuthenticationConfig",
+    "rooms.apps.RoomsConfig",
 ]
 
 SITE_ID = 1
