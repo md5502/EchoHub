@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
 from rest_framework.parsers import FormParser, MultiPartParser
@@ -150,3 +150,7 @@ class MusicDeleteApiView(APIView):
         music.music_file.delete(save=False)
         music.delete()
         return Response({"msg": "Music deleted successfully."}, status=204)
+
+
+def room_view(request, room_name):
+    return render(request, "rooms/room.html", {"room_name": room_name})

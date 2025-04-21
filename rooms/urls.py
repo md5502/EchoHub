@@ -11,6 +11,7 @@ from .views import (
     RoomDetailApiView,
     RoomMessagesApiView,
     RoomMessagesDeleteApiView,
+    room_view,
 )
 
 app_name = "Rooms"
@@ -26,4 +27,5 @@ urlpatterns = [
     path("music/", MusicListApiView.as_view(), name="music-list"),
     path("music/<int:pk>/", MusicDetailApiView.as_view(), name="music-detail"),
     path("music/<int:pk>/delete/", MusicDeleteApiView.as_view(), name="music-delete"),
+    path("room/<str:room_name>/", room_view, name="room-view"),
 ]
